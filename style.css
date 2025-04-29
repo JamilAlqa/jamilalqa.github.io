@@ -1,115 +1,176 @@
 /* General Styles */
+:root {
+    --primary-color: #3498db; /* A slightly brighter blue */
+    --secondary-color: #2c3e50; /* Darker shade for header/footer */
+    --background-color: #ecf0f1; /* Lighter grey background */
+    --text-color: #34495e; /* Slightly softer text color */
+    --card-bg: #ffffff;
+    --border-color: #dce4e8;
+    --shadow-color: rgba(0, 0, 0, 0.08);
+}
+
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f8f9fa;
-    color: #343a40;
-    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.7;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
 header {
-    background-color: #343a40;
+    background-color: var(--secondary-color);
     color: #ffffff;
-    padding: 2rem 1rem;
+    padding: 3rem 1rem; /* Increased padding */
     text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
     margin: 0;
-    font-size: 2.5rem;
-    font-weight: 600;
+    font-size: 2.8rem;
+    font-weight: 700; /* Bolder */
 }
 
 header h2 {
     margin: 0.5rem 0 0;
-    font-size: 1.5rem;
+    font-size: 1.4rem; /* Slightly smaller */
     font-weight: 300;
-    color: #adb5bd;
+    color: #bdc3c7; /* Lighter grey */
 }
 
 nav {
     text-align: center;
     padding: 1rem;
-    background-color: #ffffff;
-    border-bottom: 1px solid #dee2e6;
+    background-color: var(--card-bg);
+    border-bottom: 1px solid var(--border-color);
     position: sticky;
     top: 0;
-    z-index: 1000; /* Ensure nav stays on top */
+    z-index: 1000;
+    box-shadow: 0 1px 3px var(--shadow-color);
 }
 
 .nav-button {
     background-color: transparent;
     border: none;
-    color: #495057;
+    color: var(--text-color);
     padding: 0.8rem 1.5rem;
     margin: 0 0.5rem;
     font-size: 1rem;
+    font-weight: 600; /* Slightly bolder */
     cursor: pointer;
-    transition: color 0.3s ease, border-bottom 0.3s ease;
+    transition: color 0.3s ease, border-bottom-color 0.3s ease, transform 0.2s ease;
     border-bottom: 3px solid transparent;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .nav-button:hover {
-    color: #007bff;
+    color: var(--primary-color);
+    transform: translateY(-2px); /* Subtle lift effect */
 }
 
 .nav-button.active {
-    color: #007bff;
-    font-weight: 600;
-    border-bottom: 3px solid #007bff;
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
 }
 
 main {
     flex: 1;
     max-width: 900px;
-    margin: 2rem auto;
+    margin: 2.5rem auto; /* Increased margin */
     padding: 0 1rem;
     width: 100%;
     box-sizing: border-box;
 }
 
 .content-section {
-    display: none; /* Hide sections by default */
-    background-color: #ffffff;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 2rem;
+    display: none;
+    background-color: var(--card-bg);
+    padding: 2.5rem; /* Increased padding */
+    border-radius: 10px; /* Slightly more rounded */
+    box-shadow: 0 4px 12px var(--shadow-color); /* Softer shadow */
+    margin-bottom: 2.5rem; /* Increased margin */
     animation: fadeIn 0.5s ease-in-out;
 }
 
 .content-section.active {
-    display: block; /* Show active section */
+    display: block;
 }
 
 .content-section h2 {
     margin-top: 0;
-    color: #343a40;
-    border-bottom: 2px solid #e9ecef;
-    padding-bottom: 0.5rem;
-    margin-bottom: 1.5rem;
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.8rem;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+/* Experience Item Styling */
+.experience-item {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.experience-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.experience-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.experience-item .date {
+    font-size: 0.9rem;
+    color: #7f8c8d; /* Muted color for date */
+    margin-bottom: 0.8rem;
+    font-style: italic;
 }
 
 footer {
-    background-color: #343a40;
-    color: #adb5bd;
+    background-color: var(--secondary-color);
+    color: #bdc3c7;
     text-align: center;
-    padding: 1.5rem 1rem;
-    margin-top: auto; /* Push footer to the bottom */
+    padding: 2rem 1rem;
+    margin-top: auto;
+}
+
+.social-links {
+    margin-bottom: 1rem;
+}
+
+.social-links a {
+    color: #bdc3c7;
+    font-size: 1.5rem; /* Larger icons */
+    margin: 0 0.75rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+    transform: scale(1.1); /* Grow effect on hover */
 }
 
 footer p {
     margin: 0;
+    font-size: 0.9rem;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     header h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
 
     header h2 {
@@ -117,42 +178,73 @@ footer p {
     }
 
     .nav-button {
-        padding: 0.6rem 1rem;
+        padding: 0.7rem 1rem;
         font-size: 0.9rem;
     }
 
     main {
-        margin: 1.5rem auto;
-        padding: 0 0.5rem;
+        margin: 2rem auto;
     }
 
     .content-section {
-        padding: 1.5rem;
+        padding: 2rem;
+    }
+
+    .content-section h2 {
+        font-size: 1.6rem;
+    }
+
+    .experience-item h3 {
+        font-size: 1.2rem;
     }
 }
 
 @media (max-width: 480px) {
-    nav {
-        padding: 0.5rem;
-    }
-    .nav-button {
-        padding: 0.5rem 0.8rem;
-        font-size: 0.8rem;
-        margin: 0 0.2rem;
-    }
-
     header {
-        padding: 1.5rem 1rem;
+        padding: 2rem 1rem;
     }
 
     header h1 {
-        font-size: 1.8rem;
+        font-size: 1.9rem;
     }
 
     header h2 {
         font-size: 1rem;
     }
 
+    nav {
+        padding: 0.8rem 0.5rem;
+    }
+    .nav-button {
+        padding: 0.6rem 0.5rem;
+        font-size: 0.8rem;
+        margin: 0 0.1rem;
+        letter-spacing: 0;
+    }
+
+    main {
+        margin: 1.5rem auto;
+    }
+
+    .content-section {
+        padding: 1.5rem;
+        border-radius: 8px;
+    }
+
+    .content-section h2 {
+        font-size: 1.4rem;
+        padding-bottom: 0.6rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .experience-item h3 {
+        font-size: 1.1rem;
+    }
+
+    .social-links a {
+        font-size: 1.3rem;
+        margin: 0 0.5rem;
+    }
 }
 
 /* Fade-in animation */
