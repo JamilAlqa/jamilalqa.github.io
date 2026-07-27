@@ -16,6 +16,36 @@ export default function ProjectShowcase() {
 
   const projects = [
     {
+      title: "Motive",
+      tagline: "The cool wagon market, in real time.",
+      description:
+        "A live automotive marketplace built around real dealer inventory and pricing rather than a static catalog. Browse the market overview, drill into a full live market for any model, and search live listings — every page reflects what's actually for sale right now.",
+      image: "/placeholder.svg?height=600&width=800",
+      tags: ["Next.js", "TypeScript", "Tailwind CSS", "Visor API"],
+      gradient: "from-blue-600 to-indigo-700",
+      icon: "🚗",
+    },
+    {
+      title: "Spark",
+      tagline: "The public record for ideas.",
+      description:
+        "A platform where every idea — product, research, concept, or conversation — gets a living, versioned page: pitch, trials, team, and an executable context bundle an AI agent can pick up and run with. Forks carry lineage, so sharing early becomes proof of priority instead of a risk.",
+      image: "/placeholder.svg?height=600&width=800",
+      tags: ["Next.js", "TypeScript", "Tailwind CSS"],
+      gradient: "from-violet-600 to-indigo-800",
+      icon: "💡",
+    },
+    {
+      title: "Savour",
+      tagline: "Restaurant discovery, swipe-style.",
+      description:
+        "A dating-app-inspired way to find where to eat: swipe through restaurants matched to your cuisine, price range, distance, and available time slots, then request a reservation straight from a match. Also in development as a native mobile app.",
+      image: "/placeholder.svg?height=600&width=800",
+      tags: ["Next.js", "React", "Tailwind CSS", "Expo"],
+      gradient: "from-indigo-600 to-violet-700",
+      icon: "🍽️",
+    },
+    {
       title: "ML Model for Travel Preferences",
       description:
         "Designed, developed, and deployed a machine learning model for user preference prediction in Python. Created data capture operations to model travel preferences and automated journey booking by outputting desirable end-to-end trips for travelers.",
@@ -100,6 +130,16 @@ export default function ProjectShowcase() {
                           <Lightbulb className="h-5 w-5 text-blue-600" />
                         </motion.div>
                       </motion.h3>
+                      {projects[currentIndex].tagline && (
+                        <motion.p
+                          className="text-lg mb-3 font-heading text-gradient-accent"
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: 0.25 }}
+                        >
+                          {projects[currentIndex].tagline}
+                        </motion.p>
+                      )}
                       <motion.p
                         className="text-muted-foreground mb-6 font-sans"
                         initial={{ opacity: 0, y: 20 }}
