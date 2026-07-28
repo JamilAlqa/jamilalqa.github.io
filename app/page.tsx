@@ -108,6 +108,14 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Project Showcase */}
+      <section id="projects" className="py-20 px-4 md:px-6 bg-dots">
+        <div className="container max-w-4xl mx-auto">
+          <FunText text="Key Projects" className="mb-12 text-center" variant="default" size="xl" />
+          <ProjectShowcase />
+        </div>
+      </section>
+
       {/* About Section */}
       <section id="about" className="py-20 px-4 md:px-6 bg-confetti">
         <div className="container max-w-4xl mx-auto">
@@ -174,14 +182,6 @@ export default function Home() {
         <div className="container max-w-4xl mx-auto">
           <FunText text="Career Journey" className="mb-12 text-center" variant="accent" size="xl" />
           <CareerTimeline />
-        </div>
-      </section>
-
-      {/* Project Showcase */}
-      <section id="projects" className="py-20 px-4 md:px-6 bg-dots">
-        <div className="container max-w-4xl mx-auto">
-          <FunText text="Key Projects" className="mb-12 text-center" variant="default" size="xl" />
-          <ProjectShowcase />
         </div>
       </section>
 
